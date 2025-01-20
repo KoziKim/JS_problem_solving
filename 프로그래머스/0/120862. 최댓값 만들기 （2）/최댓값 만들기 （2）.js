@@ -3,5 +3,5 @@ function solution(numbers) {
     const candidate1 = sortedNumbers[0] * sortedNumbers[1];
     const candidate2 = sortedNumbers.pop() * sortedNumbers.pop();
     
-    return candidate1 > candidate2 ? candidate1 : candidate2;
+    return Math.max(candidate1, candidate2);
 }
