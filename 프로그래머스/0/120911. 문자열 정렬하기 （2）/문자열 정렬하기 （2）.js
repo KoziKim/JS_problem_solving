@@ -1,3 +1,3 @@
-function solution(my_string) {
-    return my_string.toLowerCase().split('').sort().join('');
+function solution(s) {
+    return [...s.toLowerCase()].sort().join('');
 }
