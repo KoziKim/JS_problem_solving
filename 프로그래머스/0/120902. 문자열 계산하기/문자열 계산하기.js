@@ -1,15 +1,20 @@
 function solution(my_string) {
-    const stack = [];
-    let sign = 1;
-    
-    for (const ch of my_string.split(' ')) {
-        if (ch === '+') {
-            sign = 1;
-        } else if (ch === '-') {
-            sign = -1;
-        } else {
-            stack.push(sign * ch);
+    let answer = 0;
+    let sign = undefined;
+    my_string.split(' ').forEach((x) => {
+        if (x === '+') {
+            sign = 'plus';
+        } else if (x === '-') {
+            sign = 'minus';
         }
-    }
-    return stack.reduce((a,b) => a+b, 0);
+        if (x === '+' || x === '-'){    
+        } else if (!sign) {
+            answer += Number(x);
+        } else if (sign === 'plus') {
+            answer += Number(x);
+        } else if (sign === 'minus') {
+            answer -= Number(x);
+        }
+    });
+    return answer;
 }
