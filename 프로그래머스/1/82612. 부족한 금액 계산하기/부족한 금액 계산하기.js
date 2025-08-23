@@ -1,9 +1,4 @@
 function solution(price, money, count) {
-    let myMoney = money;
-    let myCount = 1;
-    while (myCount <= count) {
-        myMoney -= price * myCount;
-        myCount++;
-    }
-    return myMoney < 0 ? -myMoney : 0;
+    const myMoney = money - price * count * (count + 1) / 2
+    return myMoney > 0 ? 0 : -myMoney;
 }
